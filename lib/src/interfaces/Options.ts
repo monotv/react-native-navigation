@@ -1,28 +1,46 @@
 // tslint:disable jsdoc-format
-import { ImageRequireSource, Insets } from 'react-native';
+import { ImageRequireSource, Insets } from "react-native";
 
 type Color = string;
 type FontFamily = string;
-type LayoutOrientation = 'portrait' | 'landscape';
+type LayoutOrientation = "portrait" | "landscape";
 type AndroidDensityNumber = number;
-type SystemItemIcon = 'done' | 'cancel' | 'edit'
-  | 'save' | 'add' | 'flexibleSpace' | 'fixedSpace'
-  | 'compose' | 'reply' | 'action' | 'organize'
-  | 'bookmarks' | 'search' | 'refresh' | 'stop'
-  | 'camera' | 'trash' | 'play' | 'pause'
-  | 'rewind' | 'fastForward' | 'undo' | 'redo';
+type SystemItemIcon =
+  | "done"
+  | "cancel"
+  | "edit"
+  | "save"
+  | "add"
+  | "flexibleSpace"
+  | "fixedSpace"
+  | "compose"
+  | "reply"
+  | "action"
+  | "organize"
+  | "bookmarks"
+  | "search"
+  | "refresh"
+  | "stop"
+  | "camera"
+  | "trash"
+  | "play"
+  | "pause"
+  | "rewind"
+  | "fastForward"
+  | "undo"
+  | "redo";
 
 export interface OptionsSplitView {
   /**
    * Master view display mode
    * @default 'auto'
    */
-  displayMode?: 'auto' | 'visible' | 'hidden' | 'overlay';
+  displayMode?: "auto" | "visible" | "hidden" | "overlay";
   /**
    * Master view side. Leading is left. Trailing is right.
    * @default 'leading'
    */
-  primaryEdge?: 'leading' | 'trailing';
+  primaryEdge?: "leading" | "trailing";
   /**
    * Set the minimum width of master view
    */
@@ -43,7 +61,7 @@ export interface OptionsStatusBar {
    * Set the text color of the status bar
    * @default 'light'
    */
-  style?: 'light' | 'dark';
+  style?: "light" | "dark";
   /**
    * Set the background color of the status bar
    * #### (Android specific)
@@ -80,25 +98,25 @@ export interface OptionsLayout {
    * Set language direction.
    * only works with DefaultOptions
    */
-  direction?: 'rtl' | 'ltr';
+  direction?: "rtl" | "ltr";
 }
 
 export enum OptionsModalPresentationStyle {
-  formSheet = 'formSheet',
-  pageSheet = 'pageSheet',
-  overFullScreen = 'overFullScreen',
-  overCurrentContext = 'overCurrentContext',
-  currentContext = 'currentContext',
-  popOver = 'popOver',
-  fullScreen = 'fullScreen',
-  none = 'none'
+  formSheet = "formSheet",
+  pageSheet = "pageSheet",
+  overFullScreen = "overFullScreen",
+  overCurrentContext = "overCurrentContext",
+  currentContext = "currentContext",
+  popOver = "popOver",
+  fullScreen = "fullScreen",
+  none = "none"
 }
 
 export enum OptionsModalTransitionStyle {
-  coverVertical = 'coverVertical',
-  crossDissolve = 'crossDissolve',
-  flipHorizontal = 'flipHorizontal',
-  partialCurl = 'partialCurl'
+  coverVertical = "coverVertical",
+  crossDissolve = "crossDissolve",
+  flipHorizontal = "flipHorizontal",
+  partialCurl = "partialCurl"
 }
 
 export interface OptionsTopBarLargeTitle {
@@ -154,7 +172,7 @@ export interface OptionsTopBarTitle {
     /**
      * Set component alignment
      */
-    alignment?: 'center' | 'fill';
+    alignment?: "center" | "fill";
     /**
      * Properties to pass down to the component
      */
@@ -169,7 +187,7 @@ export interface OptionsTopBarTitle {
    * Title alignment
    * #### (Android specific)
    */
-  alignment?: 'center' | 'fill';
+  alignment?: "center" | "fill";
 }
 
 export interface OptionsTopBarSubtitle {
@@ -192,7 +210,7 @@ export interface OptionsTopBarSubtitle {
   /**
    * Set subtitle alignment
    */
-  alignment?: 'center';
+  alignment?: "center";
 }
 
 export interface OptionsTopBarBackButton {
@@ -259,8 +277,8 @@ export interface OptionsTopBarButton {
    */
   icon?: ImageRequireSource;
   /**
-  * Set the button icon insets
-  */
+   * Set the button icon insets
+   */
   iconInsets?: IconInsets;
   /**
    * Set the button as a custom component
@@ -362,7 +380,7 @@ export interface OptionsTopBar {
    * @requires translucent: true
    * @default 'default'
    */
-  barStyle?: 'default' | 'black';
+  barStyle?: "default" | "black";
   /**
    * Disable the border on bottom of the navbar
    * #### (iOS specific)
@@ -424,8 +442,8 @@ export interface OptionsFab {
   visible?: boolean;
   icon?: ImageRequireSource;
   iconColor?: Color;
-  alignHorizontally?: 'left' | 'right';
-  alignVertically?: 'top' | 'bottom';
+  alignHorizontally?: "left" | "right";
+  alignVertically?: "top" | "bottom";
   hideOnScroll?: boolean;
   size?: number;
   actions?: OptionsFab[];
@@ -464,14 +482,14 @@ export interface OptionsBottomTabs {
    * Set when tabs are attached to hierarchy consequently when the
    * RootView's constructor is called.
    */
-  tabsAttachMode?: 'together' | 'afterInitialTab' | 'onSwitchToTab';
+  tabsAttachMode?: "together" | "afterInitialTab" | "onSwitchToTab";
   /**
    * Control the Bottom Tabs blur style
    * #### (iOS specific)
    * @requires translucent: true
    * @default 'default'
    */
-  barStyle?: 'default' | 'black';
+  barStyle?: "default" | "black";
   /**
    * Allows the Bottom Tabs to be translucent (blurred)
    * #### (iOS specific)
@@ -486,7 +504,7 @@ export interface OptionsBottomTabs {
    * Control the text display mode below the tab icon
    * #### (Android specific)
    */
-  titleDisplayMode?: 'alwaysShow' | 'showWhenActive' | 'alwaysHide';
+  titleDisplayMode?: "alwaysShow" | "showWhenActive" | "alwaysHide";
   /**
    * Set the elevation of the Bottom Tabs in dp
    * #### (Android specific)
@@ -591,7 +609,7 @@ export interface OptionsSideMenu {
    * #### (iOS specific)
    * @default 'entireScreen'
    */
-  openGestureMode?: 'entireScreen' | 'bezel';
+  openGestureMode?: "entireScreen" | "bezel";
 }
 
 export interface OptionsOverlay {
@@ -613,7 +631,7 @@ export interface OptionsPreviewAction {
   /**
    * Action style
    */
-  style?: 'default' | 'selected' | 'destructive';
+  style?: "default" | "selected" | "destructive";
   /**
    * Subactions that will be shown when this action is pressed.
    */
@@ -669,7 +687,7 @@ export interface OptionsAnimationPropertyConfig {
   /**
    * Animation interplation
    */
-  interpolation?: 'accelerate' | 'decelerate';
+  interpolation?: "accelerate" | "decelerate";
 }
 
 /**
@@ -782,6 +800,10 @@ export interface AnimationOptions {
    */
   setRoot?: ScreenAnimationOptions;
   /**
+   * Configure the setStackRoot animation
+   */
+  setStackRoot?: ScreenAnimationOptions;
+  /**
    * Configure what animates when a screen is pushed
    */
   push?: StackAnimationOptions;
@@ -808,7 +830,7 @@ export interface OptionsCustomTransitionAnimation {
   /**
    * Animation type, only support sharedElement currently
    */
-  type: 'sharedElement';
+  type: "sharedElement";
   /**
    * Transition from element Id
    */
